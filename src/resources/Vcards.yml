@@ -1,0 +1,13 @@
+Image:
+  extends: inside
+  height: :scale
+
+Nom:
+  extends: inside
+  x: += 50
+  y: += 850
+  width: 550
+  font: ChunkFive Roman,Sans 24
+  color: '#232F23'
+  valign: top
+  align: center
