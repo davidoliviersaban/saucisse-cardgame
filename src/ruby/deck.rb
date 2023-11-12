@@ -14,7 +14,7 @@ def drawCards(deck,dirname)
 
   png file: deck["Image"].map{ |img| "src/resources/images/"+img}, layout: "Image"
 
-  text str: deck["Nom"], layout: "Nom"
+  # text str: deck["Nom"], layout: "Nom"
 
   save_png prefix: deck["Nom"], dir: dirname
 end
