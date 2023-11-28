@@ -16,7 +16,7 @@ def drawCards(deck,dirname)
 
   # text str: deck["Nom"], layout: "Nom"
 
-  save_png prefix: deck["Nom"], dir: dirname
+  save_png dir: dirname
 end
 
 

@@ -10,15 +10,17 @@ else
     echo "rbenv already installed"
 fi
 
-if ! ruby -v | grep -q $RUBY_VERSION; then
-    if ! rbenv versions | grep -q $RUBY_VERSION; then
+if ! ruby -v | grep $RUBY_VERSION; then
+    if ! rbenv versions | grep $RUBY_VERSION; then
         rbenv install $RUBY_VERSION && echo "ruby $RUBY_VERSION installed"
-        eval "$(rbenv init - zsh)"
     fi
     rbenv global $RUBY_VERSION
 else
     echo "ruby $RUBY_VERSION already installed"
 fi
+
+eval "$(rbenv init - zsh)"
+gem env
 
 local_install_printableCardAppender() {
     cd ..
@@ -27,11 +29,10 @@ local_install_printableCardAppender() {
 }
 
 rbenv global $RUBY_VERSION
-
 gem list | grep pkg-config || gem install pkg-config && echo "pkg-config installed"
 gem list | grep squib || gem install squib && echo "squib installed" || local_install_squib
+gem update --system
 
-# gem update squib
 
 rm -rf _cards* _board _output imagesToPrint
 ruby src/ruby/deck.rb

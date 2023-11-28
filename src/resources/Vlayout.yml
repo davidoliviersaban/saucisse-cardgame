@@ -2,21 +2,21 @@ bleed:
   x: 0.25in
   y: 0.25in
   width: 2.25in
-  height: 3.25in
+  height: 2.25in
   color: '#000000'
 
 cut:
   x: 0.125in
   y: 0.125in
   width: 2.25in
-  height: 3.25in
+  height: 2.25in
   radius: 0
 
 frame:
   x: 38
   y: 38
   width: 750
-  height: 1050
+  height: 750
   radius: 25
   color: "#000000"
 
